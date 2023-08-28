@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>NLP Processing Results</title>
+
+</head>
+
+<body>
+
+    <h1>Summarized Text</h1>
+
+    <p>{{ summarized_text }}</p>
+
+   
+
+    <h1>Keyword Sentence Mapping</h1>
+
+    <ul>
+
+        {% for keyword, sentences in keyword_sentence_mapping.items() %}
+
+            <li><strong>{{ keyword }}</strong>:<br>{{ sentences|join("<br>") }}</li>
+
+        {% endfor %}
+
+    </ul>
+
+   
+
+    <h1>Key Distractors</h1>
+
+    <ul>
+
+        {% for keyword, distractors in key_distractor_list.items() %}
+
+            <li><strong>{{ keyword }}</strong>: {{ distractors|join(", ") }}</li>
+
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>
+
+ 
